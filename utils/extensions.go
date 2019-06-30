@@ -1,5 +1,7 @@
 package utils
 
+import ( "strings" )
+
 var supportedExtensions = [...]string{
 	// Images
 	".jpg",
@@ -43,7 +45,7 @@ var supportedExtensions = [...]string{
 
 func isExtensionSupported(toCheck string) bool {
 	for _, extension := range supportedExtensions {
-		if toCheck == extension {
+		if strings.ToLower(toCheck) == extension {
 			return true
 		}
 	}
