@@ -84,11 +84,13 @@ func (u *ConcurrentUploader) EnqueueUpload(filePath string) error {
 		}
 	}
 
+	fmt.Printf("before u.wasFileAlreadyUploaded")
 	if u.wasFileAlreadyUploaded(filePath) {
 		u.IgnoredUploads <- filePath
 		return nil
 	}
 
+	fmt.Printf("before isImageOrVideo")
 	// Check if the file is an image or a video
 	if valid, err := IsImageOrVideo(filePath); err != nil {
 		u.sendError(filePath, err)
