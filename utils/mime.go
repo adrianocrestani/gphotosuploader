@@ -5,7 +5,6 @@ import (
 	"os"
 	"path"
 	"strings"
-	"fmt"
 )
 
 const sniffLen = 512
