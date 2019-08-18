@@ -8,7 +8,6 @@ var supportedExtensions = [...]string{
 	".png",
 	".webp",
 	".heic",
-	".aae",
 
 	// Raw images
 	".crw",

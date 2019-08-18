@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/simonedegiacomi/gphotosuploader/api"
-	"github.com/simonedegiacomi/gphotosuploader/auth"
+	"github.com/adrianocrestani/gphotosuploader/api"
+	"github.com/adrianocrestani/gphotosuploader/auth"
 )
 
 // Simple client used to implement the tool that can upload multiple photos or videos at once
@@ -84,13 +84,11 @@ func (u *ConcurrentUploader) EnqueueUpload(filePath string) error {
 		}
 	}
 
-	fmt.Printf("before u.wasFileAlreadyUploaded")
 	if u.wasFileAlreadyUploaded(filePath) {
 		u.IgnoredUploads <- filePath
 		return nil
 	}
 
-	fmt.Printf("before isImageOrVideo")
 	// Check if the file is an image or a video
 	if valid, err := IsImageOrVideo(filePath); err != nil {
 		u.sendError(filePath, err)

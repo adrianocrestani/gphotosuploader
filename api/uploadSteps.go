@@ -11,7 +11,7 @@ import (
 	"strings"
 
 	"github.com/buger/jsonparser"
-	"github.com/simonedegiacomi/gphotosuploader/auth"
+	"github.com/adrianocrestani/gphotosuploader/auth"
 )
 
 const (

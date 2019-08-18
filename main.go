@@ -12,11 +12,11 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/simonedegiacomi/gphotosuploader/api"
-	"github.com/simonedegiacomi/gphotosuploader/utils"
+	"github.com/adrianocrestani/gphotosuploader/api"
+	"github.com/adrianocrestani/gphotosuploader/utils"
 	"github.com/fsnotify/fsnotify"
-	"github.com/simonedegiacomi/gphotosuploader/auth"
-	"github.com/simonedegiacomi/gphotosuploader/version"
+	"github.com/adrianocrestani/gphotosuploader/auth"
+	"github.com/adrianocrestani/gphotosuploader/version"
 )
 
 var (
@@ -219,7 +219,7 @@ func handleUploaderEvents(exiting chan bool) {
 
 		case info := <-uploader.IgnoredUploads:
 			ignoredCount++
-			log.Printf("Not uploading '%v', it's already been uploaded or it's not a image/video!\n", info)
+			log.Printf("Not uploading '%v', it's aaaalready been uploaded or it's not a image/video!\n", info)
 
 		case err := <-uploader.Errors:
 			log.Printf("Upload error: %v\n", err)
